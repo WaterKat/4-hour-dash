@@ -15,7 +15,7 @@ public class Jump : MonoBehaviour
         bool grounded = false;
 
         RaycastHit2D[] raycastHit2Ds = new RaycastHit2D[3];
-        if (collider.Raycast(Vector2.down, raycastHit2Ds, .5f)>0)
+        if (collider.Raycast(Vector2.down, raycastHit2Ds, .75f)>0)
         {
             grounded = true;
         }
@@ -24,7 +24,7 @@ public class Jump : MonoBehaviour
     }
     void Update()
     {
-        bool inputValue = Input.GetKeyDown("space");
+        bool inputValue = Input.GetKey("space");
 
         if ((inputValue)&&(CheckIfGrounded()))
         {
